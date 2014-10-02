@@ -1,0 +1,4 @@
+#Temp Files
+*~
+#Compressed files (We precompress on deploy)
+*.gz
