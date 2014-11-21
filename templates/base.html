@@ -26,8 +26,12 @@
 					<li><a href="/requests/">Machine Requests</a></li>
 					<li><a href="/requests/archive/">Machine Archives</a></li>
 					<li><a href="/docs/">Documents</a></li>
+					{% if user.is_staff %}
+					<li><a href="/admin/">Admin Panel</a></li>
+					{% endif %}
 					{% if user.is_authenticated %}
 					<li><a href="/accounts/profile/">Profile</a></li>
+					<li><a href="/accounts/logout/">Logout</a></li>
 					{% else %}
 					<li><a href="/accounts/login/">Login</a></li>
 					<li><a href="/accounts/register/">Register</a></li>
