@@ -23,20 +23,30 @@
 				</div>
 				<div class="collapse navbar-collapse" id="nav-navbar-collapse">
 					<ul class="nav navbar-nav">
-					<li><a href="/requests/">Machine Requests</a></li>
-					<li><a href="/requests/pending/">Machine Pickups</a></li>
-					<li><a href="/requests/archive/">Machine Archives</a></li>
-					<li><a href="/docs/">Documents</a></li>
-					{% if user.is_staff %}
-					<li><a href="/admin/">Admin Panel</a></li>
-					{% endif %}
-					{% if user.is_authenticated %}
-					<li><a href="/accounts/profile/">Profile</a></li>
-					<li><a href="/accounts/logout/">Logout</a></li>
-					{% else %}
-					<li><a href="/accounts/login/">Login</a></li>
-					<li><a href="/accounts/register/">Register</a></li>
-					{% endif %}
+						<div class="dropdown">
+							<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Machine Requests
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" aria-labelledby="dLabel">
+								<li><a href="/requests/">Outstanding Requests</a></li>
+								<li><a href="/requests/pending/">Pending Pickups</a></li>
+								<li><a href="/requests/archive/">Machine Archives</a></li>
+								<li><a href="/requests/failed/">Never Picked-up</a></li>
+							</ul>
+						</div>
+						<li><a href="/docs/">Documents</a></li>
+						{% if user.is_staff %}
+						<li><a href="/admin/">Admin Panel</a></li>
+						{% endif %}
+						{% if user.is_authenticated %}
+						<li><a href="/accounts/profile/">Profile</a></li>
+						<li><a href="/accounts/logout/">Logout</a></li>
+						{% else %}
+						<li><a href="/accounts/login/">Login</a></li>
+						<li><a href="/accounts/register/">Register</a></li>
+						{% endif %}
+					</ul>
 				</div>
 			</div>
 		</nav>
